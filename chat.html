@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Let's Talk | GetInfo Reach</title>
+
+    <link rel="stylesheet" href="chat.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="chat.html">
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-box">
+            GR
+        </span>
+
+        <span>
+            GetInfo <b>Reach</b>
+        </span>
+
+    </a>
+
+
+    <a href="index.html" class="back-btn">
+        ← Back to website
+    </a>
+
+</header>
+
+
+
+<!-- ================= CHAT PAGE ================= -->
+
+<main class="chat-page">
+
+
+    <!-- LEFT SIDE -->
+
+    <section class="intro">
+
+        <div class="online">
+
+            <span class="online-dot"></span>
+
+            AI ASSISTANT ONLINE
+
+        </div>
+
+
+        <h1>
+
+            Let's build something
+            <span>great.</span>
+
+        </h1>
+
+
+        <p>
+
+            Have a question about our services, pricing,
+            digital marketing or your business?
+
+            Ask our AI assistant.
+
+        </p>
+
+
+        <div class="quick-info">
+
+            <div>
+                <span>01</span>
+                Marketing Strategy
+            </div>
+
+            <div>
+                <span>02</span>
+                Social Media
+            </div>
+
+            <div>
+                <span>03</span>
+                Website & SEO
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CHAT BOX -->
+
+    <section class="chat-container">
+
+
+        <!-- CHAT HEADER -->
+
+        <div class="chat-header">
+
+            <div class="ai-profile">
+
+                <div class="ai-avatar">
+                    GR
+                </div>
+
+                <div>
+
+                    <strong>
+                        GetInfo AI
+                    </strong>
+
+                    <small>
+                        Digital Marketing Assistant
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="status">
+
+                <span></span>
+
+                Online
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MESSAGES -->
+
+        <div class="messages" id="chatBox">
+
+
+            <!-- AI FIRST MESSAGE -->
+
+            <div class="message ai-message">
+
+                <div class="message-avatar">
+                    GR
+                </div>
+
+                <div class="bubble">
+
+                    <strong>
+                        GetInfo AI
+                    </strong>
+
+                    <p>
+                        Hi! 👋 Welcome to GetInfo Reach.
+                        How can I help you today?
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK QUESTIONS -->
+
+            <div class="quick-questions">
+
+                <button onclick="sendQuickMessage('What services do you offer?')">
+                    What services do you offer?
+                </button>
+
+                <button onclick="sendQuickMessage('Tell me about your pricing.')">
+                    Tell me about pricing
+                </button>
+
+                <button onclick="sendQuickMessage('How can you grow my business?')">
+                    How can you grow my business?
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TYPING AREA -->
+
+        <div class="typing-area">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type your message..."
+                autocomplete="off"
+            >
+
+            <button
+                id="sendButton"
+                onclick="sendMessage()"
+                aria-label="Send message"
+            >
+
+                ↗
+
+            </button>
+
+        </div>
+
+
+        <div class="chat-note">
+
+            AI can make mistakes. Check important information.
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const input = document.getElementById("messageInput");
+const chatBox = document.getElementById("chatBox");
+const sendButton = document.getElementById("sendButton");
+
+
+
+/* ENTER KEY */
+
+input.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+        event.preventDefault();
+
+        sendMessage();
+
+    }
+
+});
+
+
+
+/* QUICK QUESTIONS */
+
+function sendQuickMessage(message) {
+
+    input.value = message;
+
+    sendMessage();
+
+}
+
+
+
+/* ADD USER MESSAGE */
+
+function addUserMessage(message) {
+
+    const wrapper = document.createElement("div");
+
+    wrapper.className = "message user-message";
+
+
+    wrapper.innerHTML = `
+
+        <div class="bubble">
+
+            <p>${escapeHTML(message)}</p>
+
+        </div>
+
+    `;
+
+
+    chatBox.appendChild(wrapper);
+
+    scrollChat();
+
+}
+
+
+
+/* ADD AI MESSAGE */
+
+function addAIMessage(message) {
+
+    const wrapper = document.createElement("div");
+
+    wrapper.className = "message ai-message";
+
+
+    wrapper.innerHTML = `
+
+        <div class="message-avatar">
+            GR
+        </div>
+
+        <div class="bubble">
+
+            <strong>
+                GetInfo AI
+            </strong>
+
+            <p>
+                ${escapeHTML(message)}
+            </p>
+
+        </div>
+
+    `;
+
+
+    chatBox.appendChild(wrapper);
+
+    scrollChat();
+
+}
+
+
+
+/* TYPING INDICATOR */
+
+function showTyping() {
+
+    const typing = document.createElement("div");
+
+    typing.className = "message ai-message";
+
+    typing.id = "typing";
+
+
+    typing.innerHTML = `
+
+        <div class="message-avatar">
+            GR
+        </div>
+
+        <div class="bubble typing">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    `;
+
+
+    chatBox.appendChild(typing);
+
+    scrollChat();
+
+}
+
+
+
+/* REMOVE TYPING */
+
+function removeTyping() {
+
+    const typing =
+        document.getElementById("typing");
+
+    if (typing) {
+
+        typing.remove();
+
+    }
+
+}
+
+
+
+/* SEND MESSAGE */
+
+async function sendMessage() {
+
+    const message =
+        input.value.trim();
+
+
+    if (!message) {
+
+        return;
+
+    }
+
+
+    addUserMessage(message);
+
+
+    input.value = "";
+
+
+    sendButton.disabled = true;
+
+    showTyping();
+
+
+    try {
+
+        const response = await fetch("/api/chat", {
+
+            method: "POST",
+
+            headers: {
+
+                "Content-Type":
+                    "application/json"
+
+            },
+
+            body: JSON.stringify({
+
+                message: message
+
+            })
+
+        });
+
+
+        const data =
+            await response.json();
+
+
+        removeTyping();
+
+
+        if (!response.ok) {
+
+            addAIMessage(
+                data.error ||
+                "Sorry, something went wrong."
+            );
+
+            return;
+
+        }
+
+
+        addAIMessage(
+            data.reply ||
+            "I couldn't generate a response."
+        );
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        removeTyping();
+
+
+        addAIMessage(
+            "I couldn't connect to the AI server. Please make sure your Node.js server is running."
+        );
+
+    }
+
+
+    sendButton.disabled = false;
+
+    input.focus();
+
+}
+
+
+
+/* SECURITY */
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+
+/* SCROLL */
+
+function scrollChat() {
+
+    chatBox.scrollTo({
+
+        top: chatBox.scrollHeight,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>

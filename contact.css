@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7f8fc;
+    color: #151827;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================
+   NAVBAR
+===================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+    background: rgba(247,248,252,.85);
+    backdrop-filter: blur(15px);
+}
+
+.nav-container {
+    width: min(1180px,92%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: "Manrope";
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7169ff,
+            #5149d8
+        );
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 8px 20px rgba(99,91,255,.25);
+}
+
+.highlight {
+    color: #635bff;
+}
+
+.back-btn {
+    padding: 11px 18px;
+
+    border: 1px solid #e1e2eb;
+
+    border-radius: 10px;
+
+    background: white;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.back-btn:hover {
+    color: #635bff;
+    transform: translateY(-2px);
+}
+
+
+/* =====================
+   PAGE
+===================== */
+
+.contact-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        160px 0
+        90px;
+
+    overflow: hidden;
+}
+
+.contact-container {
+    width: min(1180px,92%);
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================
+   BACKGROUND
+===================== */
+
+.background-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(99,91,255,.08);
+
+    animation: rotate 18s linear infinite;
+}
+
+.circle1 {
+    width: 600px;
+    height: 600px;
+
+    top: 100px;
+    right: -280px;
+}
+
+.circle2 {
+    width: 400px;
+    height: 400px;
+
+    left: -230px;
+    bottom: -150px;
+}
+
+
+/* =====================
+   LEFT
+===================== */
+
+.label {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 9px;
+
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background: #eeedff;
+
+    color: #635bff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.label span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #635bff;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(99,91,255,.1);
+}
+
+.contact-info h1 {
+
+    margin-top: 23px;
+
+    font-family: "Manrope";
+
+    font-size:
+        clamp(45px,5vw,67px);
+
+    line-height: 1.04;
+
+    letter-spacing: -3px;
+}
+
+.contact-info h1 span {
+    color: #635bff;
+}
+
+.contact-info > p {
+
+    max-width: 520px;
+
+    margin-top: 25px;
+
+    color: #666b7c;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================
+   FEATURES
+===================== */
+
+.contact-features {
+    margin-top: 40px;
+
+    display: grid;
+
+    gap: 22px;
+}
+
+.feature {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    color: #635bff;
+
+    background: #eeedff;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+}
+
+.feature h3 {
+    font-family: "Manrope";
+
+    font-size: 14px;
+}
+
+.feature p {
+    margin-top: 3px;
+
+    color: #858a9a;
+
+    font-size: 12px;
+}
+
+
+/* =====================
+   CONTACT CARD
+===================== */
+
+.contact-card {
+
+    padding: 38px;
+
+    border: 1px solid
+        rgba(255,255,255,.8);
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.92);
+
+    box-shadow:
+        0 30px 80px
+        rgba(35,38,85,.11);
+
+    backdrop-filter: blur(20px);
+}
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding-bottom: 25px;
+
+    border-bottom:
+        1px solid #eeeeF3;
+}
+
+.card-header span {
+
+    color: #8c91a1;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.card-header h2 {
+
+    margin-top: 7px;
+
+    font-family: "Manrope";
+
+    font-size: 27px;
+}
+
+.card-number {
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: #f0efff;
+
+    color: #635bff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =====================
+   FORM
+===================== */
+
+form {
+    padding-top: 27px;
+}
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 17px;
+}
+
+.form-group {
+    margin-bottom: 21px;
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #404456;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #e1e2ea;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fafafd;
+
+    color: #292c3b;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: .25s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: #635bff;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(99,91,255,.08);
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =====================
+   BUTTON
+===================== */
+
+.submit-btn {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #635bff,
+            #5148db
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 14px 30px
+        rgba(99,91,255,.25);
+
+    transition: .3s;
+}
+
+.submit-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(99,91,255,.32);
+}
+
+.submit-btn span {
+    font-size: 17px;
+}
+
+.form-note {
+
+    margin-top: 13px;
+
+    text-align: center;
+
+    color: #999daa;
+
+    font-size: 10px;
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+
+footer {
+
+    width: min(1180px,92%);
+
+    margin: auto;
+
+    padding:
+        22px 0;
+
+    border-top:
+        1px solid #e5e6ed;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #9296a5;
+
+    font-size: 11px;
+}
+
+
+/* =====================
+   ANIMATION
+===================== */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        .8s ease;
+}
+
+.reveal-right {
+
+    opacity: 0;
+
+    transform:
+        translateX(55px);
+
+    transition:
+        .9s ease;
+}
+
+.reveal.active,
+.reveal-right.active {
+
+    opacity: 1;
+
+    transform:
+        translate(0);
+}
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================
+   MOBILE
+===================== */
+
+@media(max-width:850px) {
+
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-info > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-features {
+        text-align: left;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .contact-page {
+        padding-top: 120px;
+    }
+
+    .contact-info h1 {
+        letter-spacing: -2px;
+    }
+
+    .contact-card {
+        padding: 24px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+}
