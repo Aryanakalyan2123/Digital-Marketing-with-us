@@ -21,16 +21,21 @@ const client = new OpenAI({
 
 app.use(express.json());
 
-// Serve everything inside public folder
+// Serve files from the public folder
 app.use(express.static(path.join(__dirname, "public")));
 
 // ===============================
 // Website Pages
 // ===============================
 
-// Home / intro page
+// Home page
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "intro.html"));
+    res.sendFile(path.join(__dirname, "public", "Intro.html"));
+});
+
+// Intro page
+app.get("/intro.html", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "Intro.html"));
 });
 
 // Chat page
@@ -46,14 +51,12 @@ app.post("/api/chat", async (req, res) => {
     try {
         const message = req.body.message;
 
-        // Check message
         if (!message || typeof message !== "string" || !message.trim()) {
             return res.status(400).json({
                 error: "Please enter a message."
             });
         }
 
-        // Send message to OpenAI
         const response = await client.responses.create({
             model: "gpt-5.4-mini",
 
@@ -66,7 +69,6 @@ app.post("/api/chat", async (req, res) => {
             input: message.trim()
         });
 
-        // Send AI response to frontend
         res.json({
             reply: response.output_text
         });
