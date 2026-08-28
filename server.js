@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 });
 
 // Intro page
-app.get("/intro.html", (req, res) => {
+app.get("/Intro.html", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "Intro.html"));
 });
 
