@@ -28,9 +28,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // Website Pages
 // ===============================
 
-// Home / Intro page
+// Home / intro page
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "Intro.html"));
+    res.sendFile(path.join(__dirname, "public", "intro.html"));
 });
 
 // Chat page
