@@ -4,341 +4,427 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Let's Talk | GetInfo Reach</title>
+    <title>Contact | NEXORA</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- Background Effects -->
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
 
-<header class="navbar">
 
-    <div class="nav-container">
+    <!-- NAVBAR -->
 
-        <a href="index.html" class="logo">
-            <span class="logo-mark">G</span>
-            <span>
-                GetInfo<span class="highlight">Reach</span>
-            </span>
+    <header class="navbar">
+
+        <a href="home.html" class="logo">
+            NEXORA
         </a>
 
-        <a href="index.html" class="back-btn">
-            ← Back Home
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="process.html">Process</a>
+            <a href="results.html">Results</a>
+            <a href="contactus.html" class="active">Contact</a>
+        </nav>
+
+        <a href="chat.html" class="nav-btn">
+            Let's Talk →
         </a>
 
-    </div>
-
-</header>
+    </header>
 
 
-<!-- MAIN -->
+    <!-- HERO -->
 
-<main class="contact-page">
+    <main>
 
-    <div class="background-circle circle1"></div>
-    <div class="background-circle circle2"></div>
+        <section class="contact-hero">
 
-    <div class="contact-container">
+            <div class="hero-text reveal">
 
-        <!-- LEFT SIDE -->
+                <div class="badge">
+                    <span></span>
+                    LET'S CONNECT
+                </div>
 
-        <section class="contact-info reveal">
+                <h1>
+                    Let's Build Your
+                    <br>
+                    <span>Next Big Thing.</span>
+                </h1>
 
-            <div class="label">
-                <span></span>
-                LET'S CONNECT
+                <p>
+                    Have a project, business idea or growth challenge?
+                    Tell us about it. Our team will help you turn your
+                    ideas into a powerful digital strategy.
+                </p>
+
+                <div class="hero-points">
+
+                    <div>
+                        <div class="point-icon">✦</div>
+                        <div>
+                            <strong>Free Strategy Call</strong>
+                            <small>No obligation. Just ideas.</small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="point-icon">↗</div>
+                        <div>
+                            <strong>Fast Response</strong>
+                            <small>We'll get back to you quickly.</small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="point-icon">◎</div>
+                        <div>
+                            <strong>Growth Focused</strong>
+                            <small>Strategies built around results.</small>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-            <h1>
-                Let's Talk About
-                <span>Your Growth.</span>
-            </h1>
 
-            <p>
-                Have a project in mind, need help growing your brand,
-                or simply want to know what we can do for you?
-                Send us a message.
-            </p>
+            <!-- CONTACT CARD -->
 
+            <div class="contact-card reveal" id="contact-form">
 
-            <div class="contact-features">
+                <div class="card-top">
 
-                <div class="feature">
+                    <div>
+                        <span class="mini-label">
+                            START A PROJECT
+                        </span>
 
-                    <div class="feature-icon">
+                        <h2>
+                            Tell us about it.
+                        </h2>
+                    </div>
+
+                    <div class="card-symbol">
                         ↗
                     </div>
 
-                    <div>
-                        <h3>Growth Strategy</h3>
-                        <p>
-                            Get a strategy designed around your goals.
-                        </p>
-                    </div>
-
                 </div>
 
 
-                <div class="feature">
+                <form id="contactForm">
 
-                    <div class="feature-icon">
-                        ✦
+                    <div class="input-row">
+
+                        <div class="input-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="John Smith"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="john@example.com"
+                                required
+                            >
+
+                        </div>
+
                     </div>
 
-                    <div>
-                        <h3>Creative Solutions</h3>
-                        <p>
-                            Turn your ideas into engaging digital content.
-                        </p>
-                    </div>
 
-                </div>
+                    <div class="input-group">
 
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ✓
-                    </div>
-
-                    <div>
-                        <h3>Real Results</h3>
-                        <p>
-                            Focus on measurable growth, not vanity metrics.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FORM -->
-
-        <section class="contact-card reveal-right">
-
-            <div class="card-header">
-
-                <div>
-                    <span>START A PROJECT</span>
-                    <h2>Tell us about it.</h2>
-                </div>
-
-                <div class="card-number">
-                    01
-                </div>
-
-            </div>
-
-
-            <form id="contactForm">
-
-                <div class="form-row">
-
-                    <div class="form-group">
-
-                        <label>Your Name</label>
+                        <label for="company">
+                            Company / Brand
+                        </label>
 
                         <input
                             type="text"
-                            id="name"
-                            placeholder="Enter your name"
-                            required
+                            id="company"
+                            name="company"
+                            placeholder="Your company name"
                         >
 
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="input-group">
 
-                        <label>Email Address</label>
+                        <label for="service">
+                            What do you need?
+                        </label>
 
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="you@example.com"
-                            required
-                        >
+                        <select id="service" name="service">
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option value="seo">
+                                SEO & Organic Growth
+                            </option>
+
+                            <option value="social">
+                                Social Media Marketing
+                            </option>
+
+                            <option value="performance">
+                                Performance Marketing
+                            </option>
+
+                            <option value="content">
+                                Content Marketing
+                            </option>
+
+                            <option value="website">
+                                Website Development
+                            </option>
+
+                            <option value="branding">
+                                Branding
+                            </option>
+
+                            <option value="other">
+                                Something Else
+                            </option>
+
+                        </select>
 
                     </div>
 
-                </div>
+
+                    <div class="input-group">
+
+                        <label for="budget">
+                            Estimated Budget
+                        </label>
+
+                        <select id="budget" name="budget">
+
+                            <option value="">
+                                Select your budget
+                            </option>
+
+                            <option value="under-25k">
+                                Under ₹25,000
+                            </option>
+
+                            <option value="25k-50k">
+                                ₹25,000 – ₹50,000
+                            </option>
+
+                            <option value="50k-1l">
+                                ₹50,000 – ₹1,00,000
+                            </option>
+
+                            <option value="1l-plus">
+                                ₹1,00,000+
+                            </option>
+
+                        </select>
+
+                    </div>
 
 
-                <div class="form-group">
+                    <div class="input-group">
 
-                    <label>What do you need help with?</label>
+                        <label for="message">
+                            Tell us about your project
+                        </label>
 
-                    <select id="service" required>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us about your business, goals and what you'd like to achieve..."
+                            required
+                        ></textarea>
 
-                        <option value="">
-                            Select a service
-                        </option>
-
-                        <option>
-                            Social Media Marketing
-                        </option>
-
-                        <option>
-                            SEO Optimization
-                        </option>
-
-                        <option>
-                            Paid Advertising
-                        </option>
-
-                        <option>
-                            Content Creation
-                        </option>
-
-                        <option>
-                            Complete Digital Marketing
-                        </option>
-
-                    </select>
-
-                </div>
+                    </div>
 
 
-                <div class="form-group">
+                    <button type="submit" class="submit-btn">
 
-                    <label>Tell us about your project</label>
+                        <span>
+                            Send Project Enquiry
+                        </span>
 
-                    <textarea
-                        id="message"
-                        rows="5"
-                        placeholder="Tell us about your business and goals..."
-                        required
-                    ></textarea>
+                        <b>→</b>
 
-                </div>
+                    </button>
 
 
-                <button type="submit" class="submit-btn">
+                    <p class="form-note">
+                        By submitting this form, you agree to be contacted
+                        regarding your enquiry.
+                    </p>
 
-                    Send Message
+                </form>
 
-                    <span>↗</span>
-
-                </button>
-
-
-                <p class="form-note">
-                    We usually respond within 24 hours.
-                </p>
-
-            </form>
+            </div>
 
         </section>
 
-    </div>
 
-</main>
+        <!-- CONTACT METHODS -->
 
+        <section class="contact-methods">
 
-<!-- FOOTER -->
+            <div class="section-heading reveal">
 
-<footer>
+                <span>
+                    OR REACH US DIRECTLY
+                </span>
 
-    <div>
-        © 2026 GetInfo Reach
-    </div>
+                <h2>
+                    We're just a message away.
+                </h2>
 
-    <div>
-        Digital Marketing • Strategy • Growth
-    </div>
-
-</footer>
+            </div>
 
 
-<script>
+            <div class="method-grid">
 
-const elements = document.querySelectorAll(
-    ".reveal, .reveal-right"
-);
+                <a href="mailto:hello@nexora.com" class="method-card reveal">
 
-const observer = new IntersectionObserver(
-    entries => {
+                    <div class="method-icon">
+                        @
+                    </div>
 
-        entries.forEach(entry => {
+                    <div>
+                        <small>Email Us</small>
+                        <h3>hello@nexora.com</h3>
+                        <p>Send us your project details.</p>
+                    </div>
 
-            if (entry.isIntersecting) {
+                    <b>↗</b>
 
-                entry.target.classList.add("active");
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-elements.forEach(element => {
-    observer.observe(element);
-});
+                </a>
 
 
-/* FORM */
+                <a href="#" class="method-card reveal">
 
-document
-    .getElementById("contactForm")
-    .addEventListener("submit", function(e) {
+                    <div class="method-icon">
+                        in
+                    </div>
 
-        e.preventDefault();
+                    <div>
+                        <small>LinkedIn</small>
+                        <h3>NEXORA Digital</h3>
+                        <p>Connect with our team.</p>
+                    </div>
 
-        const name =
-            document.getElementById("name").value;
+                    <b>↗</b>
 
-        const email =
-            document.getElementById("email").value;
-
-        const service =
-            document.getElementById("service").value;
-
-        const message =
-            document.getElementById("message").value;
+                </a>
 
 
-        const subject =
-            encodeURIComponent(
-                "New GetInfo Reach Inquiry"
-            );
+                <a href="#" class="method-card reveal">
 
-        const body =
-            encodeURIComponent(
-`
-Name: ${name}
+                    <div class="method-icon">
+                        ◎
+                    </div>
 
-Email: ${email}
+                    <div>
+                        <small>Working Hours</small>
+                        <h3>Mon – Sat</h3>
+                        <p>10:00 AM – 7:00 PM IST</p>
+                    </div>
 
-Service: ${service}
+                    <b>→</b>
 
-Project Details:
-${message}
-`
-            );
+                </a>
+
+            </div>
+
+        </section>
 
 
-        window.location.href =
-            `mailto:hello@getinforeach.com?subject=${subject}&body=${body}`;
+        <!-- FINAL CTA -->
 
-    });
+        <section class="final-cta reveal">
 
-</script>
+            <div class="cta-glow"></div>
+
+            <span>
+                READY WHEN YOU ARE
+            </span>
+
+            <h2>
+                Great things start
+                <em>with a conversation.</em>
+            </h2>
+
+            <p>
+                No complicated process. No unnecessary meetings.
+                Just a clear conversation about your goals.
+            </p>
+
+            <a href="#contact-form" class="cta-button">
+                Start the Conversation →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <strong>NEXORA</strong>
+
+            <p>
+                Digital strategies built for ambitious brands.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contactus.html">Contact</a>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 NEXORA. All rights reserved.
+        </div>
+
+    </footer>
+
 
 </body>
 </html>

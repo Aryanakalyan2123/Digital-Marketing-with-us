@@ -2,522 +2,491 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Let's Talk | GetInfo Reach</title>
+    <title>NEXORA AI | Let's Talk</title>
 
-    <link rel="stylesheet" href="chat.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="chat.html">
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
 
-<!-- ================= NAVBAR ================= -->
+    <header class="navbar">
 
-<header class="navbar">
+        <a href="home.html" class="logo">
+            NEXORA<span>.</span>
+        </a>
 
-    <a href="index.html" class="logo">
+        <nav>
+            <a href="home
+.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="process.html">Process</a>
+            <a href="results.html">Results</a>
+        </nav>
 
-        <span class="logo-box">
-            GR
-        </span>
+        <a href="chat.html" class="talk-btn active">
+            AI Assistant
+        </a>
 
-        <span>
-            GetInfo <b>Reach</b>
-        </span>
-
-    </a>
-
-
-    <a href="index.html" class="back-btn">
-        ← Back to website
-    </a>
-
-</header>
+    </header>
 
 
+    <!-- CHAT PAGE -->
 
-<!-- ================= CHAT PAGE ================= -->
+    <main class="chat-page">
 
-<main class="chat-page">
+        <section class="chat-container">
 
+            <!-- LEFT SIDE -->
 
-    <!-- LEFT SIDE -->
+            <div class="chat-intro">
 
-    <section class="intro">
-
-        <div class="online">
-
-            <span class="online-dot"></span>
-
-            AI ASSISTANT ONLINE
-
-        </div>
-
-
-        <h1>
-
-            Let's build something
-            <span>great.</span>
-
-        </h1>
-
-
-        <p>
-
-            Have a question about our services, pricing,
-            digital marketing or your business?
-
-            Ask our AI assistant.
-
-        </p>
-
-
-        <div class="quick-info">
-
-            <div>
-                <span>01</span>
-                Marketing Strategy
-            </div>
-
-            <div>
-                <span>02</span>
-                Social Media
-            </div>
-
-            <div>
-                <span>03</span>
-                Website & SEO
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- CHAT BOX -->
-
-    <section class="chat-container">
-
-
-        <!-- CHAT HEADER -->
-
-        <div class="chat-header">
-
-            <div class="ai-profile">
-
-                <div class="ai-avatar">
-                    GR
+                <div class="ai-badge">
+                    <span></span>
+                    NEXORA AI
                 </div>
 
-                <div>
+                <h1>
+                    Let's build your
+                    <strong>growth strategy.</strong>
+                </h1>
 
-                    <strong>
-                        GetInfo AI
-                    </strong>
+                <p>
+                    Talk to our AI marketing assistant. Ask about
+                    SEO, social media, paid advertising, branding,
+                    content or growing your business online.
+                </p>
 
-                    <small>
-                        Digital Marketing Assistant
-                    </small>
+                <div class="quick-info">
+
+                    <div>
+                        <span>✦</span>
+                        Marketing Strategy
+                    </div>
+
+                    <div>
+                        <span>✦</span>
+                        SEO & Content
+                    </div>
+
+                    <div>
+                        <span>✦</span>
+                        Social Media
+                    </div>
+
+                    <div>
+                        <span>✦</span>
+                        Paid Advertising
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <div class="status">
+            <!-- CHAT BOX -->
 
-                <span></span>
+            <div class="chat-box">
 
-                Online
+                <div class="chat-header">
 
-            </div>
+                    <div class="ai-profile">
 
-        </div>
+                        <div class="ai-icon">
+                            ✦
+                        </div>
 
+                        <div>
+                            <strong>NEXORA AI</strong>
+                            <small>
+                                <span></span>
+                                Online
+                            </small>
+                        </div>
 
+                    </div>
 
-        <!-- MESSAGES -->
-
-        <div class="messages" id="chatBox">
-
-
-            <!-- AI FIRST MESSAGE -->
-
-            <div class="message ai-message">
-
-                <div class="message-avatar">
-                    GR
-                </div>
-
-                <div class="bubble">
-
-                    <strong>
-                        GetInfo AI
-                    </strong>
-
-                    <p>
-                        Hi! 👋 Welcome to GetInfo Reach.
-                        How can I help you today?
-                    </p>
+                    <button id="clearChat">
+                        Clear
+                    </button>
 
                 </div>
 
+
+                <!-- MESSAGES -->
+
+                <div id="messages" class="messages">
+
+                    <div class="message ai-message">
+
+                        <div class="message-icon">
+                            ✦
+                        </div>
+
+                        <div class="message-content">
+
+                            <span class="message-name">
+                                NEXORA AI
+                            </span>
+
+                            <p>
+                                Hi! I'm NEXORA's AI marketing assistant.
+                                What would you like to improve about your
+                                digital marketing?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="suggestions">
+
+                        <button onclick="sendSuggestion('How can I grow my business online?')">
+                            How can I grow my business?
+                        </button>
+
+                        <button onclick="sendSuggestion('How can SEO help my website?')">
+                            How can SEO help me?
+                        </button>
+
+                        <button onclick="sendSuggestion('Which social media strategy should I use?')">
+                            Social media strategy
+                        </button>
+
+                        <button onclick="sendSuggestion('How should I start paid advertising?')">
+                            Paid advertising
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INPUT -->
+
+                <div class="chat-input-area">
+
+                    <div class="input-wrapper">
+
+                        <textarea
+                            id="userInput"
+                            placeholder="Ask NEXORA AI anything..."
+                            rows="1"
+                        ></textarea>
+
+                        <button id="sendButton" aria-label="Send message">
+                            ↑
+                        </button>
+
+                    </div>
+
+                    <div class="input-note">
+                        NEXORA AI can make mistakes. Verify important information.
+                    </div>
+
+                </div>
+
             </div>
 
+        </section>
 
-            <!-- QUICK QUESTIONS -->
+    </main>
 
-            <div class="quick-questions">
 
-                <button onclick="sendQuickMessage('What services do you offer?')">
-                    What services do you offer?
-                </button>
+    <script>
 
-                <button onclick="sendQuickMessage('Tell me about your pricing.')">
-                    Tell me about pricing
-                </button>
+        const messages = document.getElementById("messages");
+        const userInput = document.getElementById("userInput");
+        const sendButton = document.getElementById("sendButton");
+        const clearChat = document.getElementById("clearChat");
 
-                <button onclick="sendQuickMessage('How can you grow my business?')">
-                    How can you grow my business?
-                </button>
 
-            </div>
+        // =========================
+        // ADD MESSAGE
+        // =========================
 
-        </div>
+        function addMessage(text, type) {
 
+            const message = document.createElement("div");
 
+            message.className =
+                type === "user"
+                    ? "message user-message"
+                    : "message ai-message";
 
-        <!-- TYPING AREA -->
 
-        <div class="typing-area">
+            if (type === "user") {
 
-            <input
-                type="text"
-                id="messageInput"
-                placeholder="Type your message..."
-                autocomplete="off"
-            >
+                message.innerHTML = `
+                    <div class="message-content">
+                        <span class="message-name">YOU</span>
+                        <p>${escapeHTML(text)}</p>
+                    </div>
+                `;
 
-            <button
-                id="sendButton"
-                onclick="sendMessage()"
-                aria-label="Send message"
-            >
+            } else {
 
-                ↗
+                message.innerHTML = `
+                    <div class="message-icon">✦</div>
 
-            </button>
+                    <div class="message-content">
+                        <span class="message-name">NEXORA AI</span>
+                        <p>${escapeHTML(text)}</p>
+                    </div>
+                `;
 
-        </div>
+            }
 
+            messages.appendChild(message);
 
-        <div class="chat-note">
+            messages.scrollTop = messages.scrollHeight;
+        }
 
-            AI can make mistakes. Check important information.
 
-        </div>
+        // =========================
+        // ESCAPE HTML
+        // =========================
 
+        function escapeHTML(text) {
 
-    </section>
+            const div = document.createElement("div");
 
-</main>
+            div.textContent = text;
 
+            return div.innerHTML;
+        }
 
 
-<!-- ================= JAVASCRIPT ================= -->
+        // =========================
+        // TYPING INDICATOR
+        // =========================
 
-<script>
+        function showTyping() {
 
-const input = document.getElementById("messageInput");
-const chatBox = document.getElementById("chatBox");
-const sendButton = document.getElementById("sendButton");
+            const typing = document.createElement("div");
 
+            typing.id = "typing";
 
+            typing.className = "message ai-message";
 
-/* ENTER KEY */
+            typing.innerHTML = `
+                <div class="message-icon">✦</div>
 
-input.addEventListener("keydown", function(event) {
+                <div class="message-content">
 
-    if (event.key === "Enter") {
+                    <span class="message-name">
+                        NEXORA AI
+                    </span>
 
-        event.preventDefault();
+                    <div class="typing">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
 
-        sendMessage();
+                </div>
+            `;
 
-    }
+            messages.appendChild(typing);
 
-});
+            messages.scrollTop = messages.scrollHeight;
+        }
 
 
+        function removeTyping() {
 
-/* QUICK QUESTIONS */
+            const typing = document.getElementById("typing");
 
-function sendQuickMessage(message) {
-
-    input.value = message;
-
-    sendMessage();
-
-}
-
-
-
-/* ADD USER MESSAGE */
-
-function addUserMessage(message) {
-
-    const wrapper = document.createElement("div");
-
-    wrapper.className = "message user-message";
-
-
-    wrapper.innerHTML = `
-
-        <div class="bubble">
-
-            <p>${escapeHTML(message)}</p>
-
-        </div>
-
-    `;
-
-
-    chatBox.appendChild(wrapper);
-
-    scrollChat();
-
-}
-
-
-
-/* ADD AI MESSAGE */
-
-function addAIMessage(message) {
-
-    const wrapper = document.createElement("div");
-
-    wrapper.className = "message ai-message";
-
-
-    wrapper.innerHTML = `
-
-        <div class="message-avatar">
-            GR
-        </div>
-
-        <div class="bubble">
-
-            <strong>
-                GetInfo AI
-            </strong>
-
-            <p>
-                ${escapeHTML(message)}
-            </p>
-
-        </div>
-
-    `;
-
-
-    chatBox.appendChild(wrapper);
-
-    scrollChat();
-
-}
-
-
-
-/* TYPING INDICATOR */
-
-function showTyping() {
-
-    const typing = document.createElement("div");
-
-    typing.className = "message ai-message";
-
-    typing.id = "typing";
-
-
-    typing.innerHTML = `
-
-        <div class="message-avatar">
-            GR
-        </div>
-
-        <div class="bubble typing">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-    `;
-
-
-    chatBox.appendChild(typing);
-
-    scrollChat();
-
-}
-
-
-
-/* REMOVE TYPING */
-
-function removeTyping() {
-
-    const typing =
-        document.getElementById("typing");
-
-    if (typing) {
-
-        typing.remove();
-
-    }
-
-}
-
-
-
-/* SEND MESSAGE */
-
-async function sendMessage() {
-
-    const message =
-        input.value.trim();
-
-
-    if (!message) {
-
-        return;
-
-    }
-
-
-    addUserMessage(message);
-
-
-    input.value = "";
-
-
-    sendButton.disabled = true;
-
-    showTyping();
-
-
-    try {
-
-        const response = await fetch("/api/chat", {
-
-            method: "POST",
-
-            headers: {
-
-                "Content-Type":
-                    "application/json"
-
-            },
-
-            body: JSON.stringify({
-
-                message: message
-
-            })
-
-        });
-
-
-        const data =
-            await response.json();
-
-
-        removeTyping();
-
-
-        if (!response.ok) {
-
-            addAIMessage(
-                data.error ||
-                "Sorry, something went wrong."
-            );
-
-            return;
+            if (typing) {
+                typing.remove();
+            }
 
         }
 
 
-        addAIMessage(
-            data.reply ||
-            "I couldn't generate a response."
+        // =========================
+        // SEND MESSAGE
+        // =========================
+
+        async function sendMessage() {
+
+            const text = userInput.value.trim();
+
+            if (!text) return;
+
+
+            addMessage(text, "user");
+
+            userInput.value = "";
+
+            userInput.style.height = "auto";
+
+            sendButton.disabled = true;
+
+            showTyping();
+
+
+            try {
+
+                const response = await fetch("/api/chat", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        message: text
+                    })
+
+                });
+
+
+                const data = await response.json();
+
+                removeTyping();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.error || "Something went wrong."
+                    );
+
+                }
+
+
+                addMessage(
+                    data.reply,
+                    "ai"
+                );
+
+
+            } catch (error) {
+
+                removeTyping();
+
+                addMessage(
+                    "Sorry, I couldn't connect to the AI right now. Please try again.",
+                    "ai"
+                );
+
+                console.error(error);
+
+            }
+
+
+            sendButton.disabled = false;
+
+            userInput.focus();
+        }
+
+
+        // =========================
+        // SUGGESTIONS
+        // =========================
+
+        function sendSuggestion(text) {
+
+            userInput.value = text;
+
+            sendMessage();
+
+        }
+
+
+        // =========================
+        // BUTTON
+        // =========================
+
+        sendButton.addEventListener(
+            "click",
+            sendMessage
         );
 
 
-    } catch (error) {
+        // =========================
+        // ENTER TO SEND
+        // =========================
 
-        console.error(error);
+        userInput.addEventListener(
+            "keydown",
+            function(event) {
 
+                if (
+                    event.key === "Enter" &&
+                    !event.shiftKey
+                ) {
 
-        removeTyping();
+                    event.preventDefault();
 
+                    sendMessage();
 
-        addAIMessage(
-            "I couldn't connect to the AI server. Please make sure your Node.js server is running."
+                }
+
+            }
         );
 
-    }
+
+        // =========================
+        // AUTO RESIZE
+        // =========================
+
+        userInput.addEventListener(
+            "input",
+            function() {
+
+                this.style.height = "auto";
+
+                this.style.height =
+                    this.scrollHeight + "px";
+
+            }
+        );
 
 
-    sendButton.disabled = false;
+        // =========================
+        // CLEAR CHAT
+        // =========================
 
-    input.focus();
+        clearChat.addEventListener(
+            "click",
+            function() {
 
-}
+                messages.innerHTML = `
+                    <div class="message ai-message">
 
+                        <div class="message-icon">
+                            ✦
+                        </div>
 
+                        <div class="message-content">
 
-/* SECURITY */
+                            <span class="message-name">
+                                NEXORA AI
+                            </span>
 
-function escapeHTML(text) {
+                            <p>
+                                Chat cleared. What would you
+                                like to work on?
+                            </p>
 
-    const div =
-        document.createElement("div");
+                        </div>
 
-    div.textContent = text;
+                    </div>
+                `;
 
-    return div.innerHTML;
+            }
+        );
 
-}
-
-
-
-/* SCROLL */
-
-function scrollChat() {
-
-    chatBox.scrollTo({
-
-        top: chatBox.scrollHeight,
-
-        behavior: "smooth"
-
-    });
-
-}
-
-</script>
-
+    </script>
 
 </body>
 </html>
